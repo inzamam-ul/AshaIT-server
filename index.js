@@ -17,6 +17,7 @@ const client = new MongoClient(uri, {
   useUnifiedTopology: true,
 });
 client.connect((err) => {
+  console.log(err);
   const serviceCollection = client.db("AshaIT").collection("services");
   const orderCollection = client.db("AshaIT").collection("orders");
   const adminCollection = client.db("AshaIT").collection("admins");
@@ -49,7 +50,12 @@ client.connect((err) => {
   });
   app.get("/services", (req, res) => {
     serviceCollection.find({}).toArray((err, service) => {
-      res.send(service);
+      console.log(service);
+      if (err == null) {
+        res.send(service);
+      } else {
+        res.send(err);
+      }
     });
   });
 
