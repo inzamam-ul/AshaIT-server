@@ -1,0 +1,23 @@
+[
+  {
+    "_id": { "$oid": "6079d951ef1c4b0fe84e74d6" },
+    "name": "Responsive Web Design",
+    "price": "900",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam, quaerat omnis cumque accusantium molestias recusandae?",
+    "imgUrl": "https://i.ibb.co/F06g1rh/3323619.jpg"
+  },
+  {
+    "_id": { "$oid": "6079d98def1c4b0fe84e74d7" },
+    "name": "Android app development",
+    "price": "400",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam, quaerat omnis cumque accusantium molestias recusandae?",
+    "imgUrl": "https://i.ibb.co/ZLHNN1F/new-Asset-1-2x.png"
+  },
+  {
+    "_id": { "$oid": "6079d9c1ef1c4b0fe84e74d8" },
+    "name": "IOS app development",
+    "price": "800",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam, quaerat omnis cumque accusantium molestias recusandae?",
+    "imgUrl": "https://i.ibb.co/xJVv1Ff/3054228.jpg"
+  }
+]
