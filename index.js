@@ -15,13 +15,26 @@ app.use(cors());
 const port = process.env.PORT || 5050;
 
 const uri = `mongodb+srv://chaldaluser:chaldaluser420@cluster0.gbf8e.mongodb.net/AshaIT?retryWrites=true&w=majority`;
-mongoose
-  .connect(uri, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(() => console.log("database connection successful!"))
-  .catch((err) => console.log(err));
+
+const connectDb = async () => {
+  try {
+    const conn = await mongoose.connect(uri, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    console.log("database connection successful!");
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+// mongoose
+//   .connect(uri, {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//   })
+//   .then(() => console.log("database connection successful!"))
+//   .catch((err) => console.log(err));
 
 app.post("/addAdmin", async (req, res) => {
   // {"name":"Haque Md Inzamamul","email":"inzamam.cu@gmail.com"}
@@ -151,6 +164,8 @@ app.get("/", (req, res) => {
   res.send("Asha IT Server Is Working!");
 });
 
-app.listen(port, () => {
-  console.log(`Server listening on post: ${port}`);
+connectDb().then(() => {
+  app.listen(port, () => {
+    console.log(`Server listening on post: ${port}`);
+  });
 });
